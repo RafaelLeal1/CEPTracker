@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Enter Key</title>
+</head>
+<body>
+
+<label for="inputField">Digite algo:</label>
+<input type="text" id="inputField" onkeydown="handleKeyDown(event)">
+<button onclick="submitForm()">Enviar</button>
+
+<script>
+    function handleKeyDown(event) {
+        if (event.key === 'Enter') {
+            submitForm();
+        }
+    }
+
+    function submitForm() {
+        var inputValue = document.getElementById('inputField').value;
+
+        console.log('Valor digitado: ' + inputValue);
+
+        document.getElementById('inputField').value = '';
+    }
+</script>
+
+</body>
+</html>
